@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Pomodoro </title>
+
+    <!-- Link to the default light theme -->
+    <link rel="stylesheet" href="minimalist.css" id="theme">
+
+    <link rel="icon" href="images/icon.svg" type="webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Harmattan:wght@400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Protest+Strike&family=Space+Grotesk:wght@300..700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+
+        <div class="sidebar" id="edit-timer">
+            <div class="rectangle">
+
+                <div class="header"> </div>
+                
+                <div class="sidebar-theme">
+                    <h2 class="name"> Themes </h2>
+
+                    <div class="left-side">
+                        <div class="theme-button">
+                            <button class="timer-theme" > Clock </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right-side">
+                    <div id="timer-content" class="theme-content">
+                        <div class="theme-set">
+                            <button class="theme-pic one" id="theme1" data-theme="theme-background-aesthetic">
+                                <img class="pic one" src="images/gradient4-complete.png" alt="Aesthetic Heart">
+                                <p>Aesthetic Heart</p>
+                            </button>
+
+                            <div class="theme-pic two" id="theme2" data-theme="theme-background-ambient">
+                                <img class="pic one" src="images/gradient5.jpeg" alt="Ambient Heart">
+                                <p>Ambient Heart</p>
+                            </div>
+                            <div class="theme-pic three" id="theme3" data-theme="theme-background-squared">
+                                <img class="pic one" src="images/squared.png" alt="Ambient Clock">
+                                <p>Ambient Clock</p>
+                            </div>
+
+                            <div class="theme-pic four" id="theme4" data-theme="theme-background-lofi1">
+                                <img class="pic one" src="images/video1.webp">
+                                <p> Lofi </p>
+                            </div> 
+
+                            <div class="theme-pic five" id="theme5" data-theme="theme-background-lofi2">
+                                <img class="pic one" src="images/video3.gif">
+                                <p> Lofi </p>
+                            </div> 
+
+                            <div class="theme-pic six" id="theme6" data-theme="theme-background-lofi3">
+                                <img class="pic one" src="images/video2.webp">
+                                <p> Lofi </p>
+                            </div> 
+
+                            <div class="theme-pic seven" id="theme7" data-theme="theme-background-lofi4">
+                                <img class="pic one" src="https://i.pinimg.com/originals/fb/af/44/fbaf443c014bf40b95cfa35121572b25.gif">
+                                <p> Lofi </p>
+                            </div> 
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="todo-list">
+            
+            <label class="check-container">
+                <input type="checkbox" id="sidebarToggle" checked="checked">
+                <div class="line"></div>
+                <div class="line line-indicator"></div>
+            </label>
+              
+            <label class="switch">
+                <input id="ChangeTheme" class="toggle" type="checkbox">
+                <span class="slider"></span>
+                <span class="card-side"></span>
+            </label>
+        </div>
+
+        <div class="intro">
+            <input type="text" placeholder="What is your focus for today?" maxlength="25">
+            <img class="image" src="images/pencil.png">
+        </div>
+
+
+        <div class="timer-box">
+            <div class="timer-buttons">
+                <button type="button" class="box_timer one" id="pomodoro"> Pomodoro </button>
+                <section class="dots-container">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </section>
+            </div>
+            
+              
+            <button type="button" class="box_timer" id="shortBreak"> Short Break </button>
+            <button type="button" class="box_timer" id="longBreak"> Long Break </button>
+        </div>
+
+        <div class="clock">
+            <div class="time-container"> 
+                <div class="time" id="timeContainer">
+                    <input class="mins" type="number" placeholder="25" min="5" max="180">
+                    <span class="dot-1">:</span>
+                    <span class="secs">00</span>
+                </div>
+            </div>
+            <div class="timer-actions">
+                <button id="toggleButton" type="button" onclick="startPomodoro()" class="start"> Start </button>
+                <img class="reload" src="images/refresh.png" onclick="rotateImage()">
+            </div>
+        </div>
+
+    </div>
+
+    <script src="minimalist.js"></script>
+</body>
+</html>
