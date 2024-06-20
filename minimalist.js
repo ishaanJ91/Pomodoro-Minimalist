@@ -1,4 +1,4 @@
-
+ 
 const toggleButton = document.getElementById("toggleButton");
 let timerInterval;
 let isRunning = false;

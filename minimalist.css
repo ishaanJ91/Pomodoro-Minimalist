@@ -1,8 +1,8 @@
 
 * {
-    margin: 0px;
+   margin: 0px;
     padding: 0px;
-    box-sizing: border-box;
+    box-sizing: border-box; 
     font-family: Space Grotesk;
 }
 
@@ -54,7 +54,7 @@ input::-webkit-inner-spin-button {
     background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
                                       linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
     background-size: 55px 55px;
-    position: relative;
+    position: fixed;
 }
 
 
@@ -66,7 +66,6 @@ input::-webkit-inner-spin-button {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(243, 243, 243, 0.5), transparent);
     z-index: -1;
 }
 
@@ -105,7 +104,7 @@ input {
 }
 
 body.dark-mode ::placeholder {
-    color: rgb(118, 118, 118);
+    color: rgb(208, 208, 208);
 }
 
 .timer-box {
@@ -600,6 +599,8 @@ body.dark-mode .selected {
     border-radius: 3px;
     transition: 0.3s ease-in-out;
     margin-top: 5px;
+    z-index: -4;
+    opacity: 0;
     
     height: auto;
     right: 25px;   
@@ -647,7 +648,8 @@ body.dark-mode .line {
     height: 30px;
     top: 25px;
     left: 840px;
-    z-index: 4;
+    z-index: -4;
+    opacity: 0;
     background: #E1E1E1;
 }
 
@@ -688,7 +690,6 @@ body.dark-mode .line {
 
 
 
-
 /* Rectangle section */
 .rectangle {
     justify-content: flex-start;
@@ -710,372 +711,4 @@ body.dark-mode .line {
     height: 100%;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), transparent); /* Lower transparency */
     border-radius: 20px;
-    z-index: -1;
-}
-
-.sidebar-theme {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    width: fit-content;
-    height: 80vh;
-    padding-right: 20px;
-    margin-top: 80px;
-    border-right: solid;
-    border-right-color: #E1E1E1;
-}
-
-.theme-button {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 50px;
-    gap: 10px;
-}
-
-
-.pomodoro-theme, .timer-theme, .minimalist {
-    cursor: pointer;
-    outline: none;
-    border: none;
-    background: none;
-    color: white;
-    font-size: 20px;
-    font-weight: 500;
-    width: fit-content;
-    height: fit-content;
-    padding: 5px 10px;
-    text-align: left;
-    transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
-}
-
-.theme-button .pomodoro-theme:hover, .theme-button .timer-theme:hover, .theme-button .minimalist:hover{
-    background-color: #E1E1E1;
-    color: #2d2d2d;
-    width: 120px;
-    border-radius: 5px;
-}
-
-.active-theme {
-    background-color: #E1E1E1; /* Example color */
-    color: #2d2d2d; /* Example color */
-    padding-left: 15px;
-    border-radius: 5px;
-    width: 120px;
-}
-
-.theme-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding-top: 110px;
-}
-
-
-/* Name section */
-.name {
-    position: relative;
-    font-size: xx-large;
-    color: white;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
-}
-
-.check-container.move-top-right {
-    display: flex;
-    position: fixed;
-    width: 30px;
-    height: 30px;
-    top: 25px;
-    left: 840px;
-    z-index: 4;
-    
-    background: transparent;
-}
-
-.check-container.move-top-right .line {
-    background: #ede7e7;
-}
-
-.theme-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding-top: 110px;
-}
-
-.theme-set {
-    display: flex;
-    flex-wrap: wrap;
-    width: 700px;
-    justify-content: space-between;
-    row-gap: 25px;
-    overflow-x: hidden; /* Hide horizontal scrollbar */
-    padding-left: 25px;
-}
-
-.theme-pic {
-    display: flex;
-    gap: 15px;
-    background: transparent;
-    border-style: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    flex-basis: calc(50% - 10px); /* Three themes per row, accounting for gaps */
-    box-sizing: border-box;
-    transition: transform 0.3s ease-in-out;
-    position: relative;
-}
-
-.theme-pic img {
-    width: 250px;
-    cursor: pointer;
-}
-
-
-p {
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: -0.03375rem;
-    color: white;
-}
-
-.pic {
-    width: 100px;
-    border-radius: 20px;
-}
-
-.theme-set {
-    max-height: 580px; /* Adjust the height as needed */
-    overflow-y: auto;
-    padding-right: 15px; /* Add some padding to avoid clipping the scrollbar */
-}
-
-/* Optional: Style the scrollbar */
-.theme-set::-webkit-scrollbar {
-    width: 5px;
-}
-
-.theme-set::-webkit-scrollbar-thumb {
-    background-color: #393939;
-    border-radius: 30px;
-}
-
-.theme-set::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
-    border-radius: 30px;
-}
-
-.theme-set::-webkit-scrollbar-track {
-    border-radius: 30px;
-}
-
-.theme-pic::after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    border-radius: 5px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    transition: opacity 0.3s ease-in-out;
-    flex-basis: calc(50% - 20px);
-}
-
-/* Scale up the box */
-.theme-pic:hover {
-    transform: scale(1.03, 1.03);
-}
-
-
-.theme-button {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 50px;
-    gap: 10px;
-}
-
-.pomodoro-theme, .timer-theme {
-    cursor: pointer;
-    outline: none;
-    border: none;
-    background: none;
-    color: white;
-    font-size: 20px;
-    font-weight: 500;
-    width: fit-content;
-    height: fit-content;
-    padding: 5px 10px;
-    text-align: left;
-    transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
-}
-
-.pomodoro-theme:hover, .timer-theme:hover {
-    background-color: #E1E1E1;
-    color: #2d2d2d;
-    width: 120px;
-    border-radius: 5px;
-}
-
-.active-theme {
-    background-color: #E1E1E1; /* Example color */
-    color: #2d2d2d; /* Example color */
-    padding-left: 15px;
-    border-radius: 5px;
-    width: 120px;
-}
-
-.theme-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding-top: 110px;
-}
-
-
-.theme-set {
-    display: flex;
-    flex-wrap: wrap;
-    width: 700px;
-    justify-content: space-between;
-    row-gap: 25px;
-    overflow-x: hidden; /* Hide horizontal scrollbar */
-    padding-left: 25px;
-}
-
-.theme-pic {
-    display: flex;
-    gap: 15px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    flex-basis: calc(50% - 10px); /* Three themes per row, accounting for gaps */
-    box-sizing: border-box;
-    transition: transform 0.3s ease-in-out;
-    position: relative;
-
-}
-
-.theme-pic img {
-    width: 250px;
-    cursor: pointer;
-}
-
-p {
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: -0.03375rem;
-    color: white;
-}
-
-.pic {
-    width: 100px;
-    border-radius: 20px;
-}
-
-.theme-set {
-    max-height: 580px; /* Adjust the height as needed */
-    overflow-y: auto;
-    padding-right: 15px; /* Add some padding to avoid clipping the scrollbar */
-}
-
-/* Optional: Style the scrollbar */
-.theme-set::-webkit-scrollbar {
-    width: 5px;
-}
-
-.theme-set::-webkit-scrollbar-thumb {
-    background-color: #393939;
-    border-radius: 30px;
-}
-
-.theme-set::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
-    border-radius: 30px;
-}
-
-.theme-set::-webkit-scrollbar-track {
-    border-radius: 30px;
-}
-
-.theme-pic::after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    border-radius: 5px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    transition: opacity 0.3s ease-in-out;
-    flex-basis: calc(50% - 20px);
-  }
-
-  /* Scale up the box */
-.theme-pic:hover {
-    transform: scale(1.03, 1.03);
-}
-
-
-.theme-background-aesthetic .container::after {
-    background-image: url('https://cdn.dribbble.com/users/8386872/screenshots/16014015/media/8b1cdc863851d0eaed92d00c3884e70e.jpg?resize=1600x1200&vertical=center');
-}
-
-.theme-background-ambient .container {
-    background-image: url('https://i.pinimg.com/originals/a3/ad/e1/a3ade1e1051a31ff5d37fca5118d7678.jpg');
-}
-
-.theme-background-aura .container {                                        
-    background-image: url('images/gradient2-complete.png');
-}
-
-.theme-background-squared .container {
-    --color: #E1E1E1;
-    background-color: #F3F3F3;
-    background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
-                                      linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
-    background-size: 55px 55px;
-    display: flex;
-    z-index: -4;
-}
-
-.theme-background-lofi1 .container {
-    background-image: url('https://64.media.tumblr.com/cb1a6d28f1f97fe56c0764cdf40fc92c/d662df3b2e19bcdc-c5/s1280x1920/4baa320331097d96bf9dbbc1277cfbe4b48f3920.gifv');
-    background-color: rgba(0, 0, 0, 0.381);
-    background-blend-mode: multiply;
-    z-index: 5;
-}
-
-.theme-background-lofi2 .container {
-    background-image: url('https://cdnb.artstation.com/p/assets/images/images/029/320/295/original/bogdan-mb0sco-coffeeanim.gif?1601147277');
-    background-color: rgba(0, 0, 0, 0.32);
-    background-blend-mode: multiply;
-}
-
-.theme-background-lofi3 .container {
-    background-image: url('https://i.pinimg.com/736x/4f/87/48/4f87486ef8cdba9412f99c7fad2ef8a7.jpg');
-    background-color: rgba(0, 0, 0, 0.107);
-    background-blend-mode: multiply;
-}
-
-.theme-background-lofi4 .container {
-    background-image: url('https://i.pinimg.com/originals/fb/af/44/fbaf443c014bf40b95cfa35121572b25.gif');
-    background-color: rgba(0, 0, 0, 0.381);
-    background-blend-mode: multiply;
 }

@@ -1,0 +1,55 @@
+
+@media (min-width: 200px) and (max-width: 750px) {
+
+    input {
+        width: 20rem;
+        padding-right: 0px;
+        font-size: 1.15rem;
+    }
+
+    input::placeholder {
+        font-size: 1.15rem;
+    }
+
+    .image {
+        width: 1.1rem;
+    }
+
+    .reload {
+        width: 2.5rem;
+    }
+
+    .timer-box {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .time {
+        font-size: 75px;
+        margin-left: -100px;
+    }
+
+    .mins, .secs {
+        font-size: 80px;
+        width: 400px;
+    }
+
+    .mins {
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-right: 10px;
+    }
+
+    .secs {
+        margin-left: -140px;
+    }
+
+    .start {
+
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+    }
+
+
+
+}
